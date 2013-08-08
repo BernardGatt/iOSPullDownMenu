@@ -1,4 +1,6 @@
 iOSPullDownMenu
 ===============
 
-A pulldown menu designed for all iOS devices, it plugs onto the navigation controller and can be configured in numerous ways.
+A pulldown menu for all iOS devices.
+
+It plugs onto the navigation controller and can be configured in numerous ways.

@@ -16,25 +16,35 @@
     NSMutableArray *menuItems;
     
     UIView *handle;
+    UIView *masterView;
     UIPanGestureRecognizer *navigationDragGestureRecognizer;
     UIPanGestureRecognizer *handleDragGestureRecognizer;
     UINavigationController *masterNavigationController;
     UIDeviceOrientation currentOrientation;
     
-    float navigationBarHeight;
+    float topMargin;
     float tableHeight;
-    
-    BOOL fullyOpen;
 }
 
+@property (nonatomic, assign) id<PulldownMenuDelegate> delegate;
 @property (nonatomic, retain) UITableView *menuList;
 @property (nonatomic, retain) UIView *handle;
-@property (nonatomic) float rowHeight;
+
+/* Appearance Properties */
 @property (nonatomic) float handleHeight;
 @property (nonatomic) float animationDuration;
-@property (nonatomic, assign) id<PulldownMenuDelegate> delegate;
+@property (nonatomic) float topMarginPortrait;
+@property (nonatomic) float topMarginLandscape;
+@property (nonatomic) UIColor *cellColor;
+@property (nonatomic) UIColor *cellSelectedColor;
+@property (nonatomic) UIColor *cellTextColor;
+@property (nonatomic) UITableViewCellSelectionStyle cellSelectionStyle;
+@property (nonatomic) UIFont *cellFont;
+@property (nonatomic) float cellHeight;
+@property (nonatomic) BOOL fullyOpen;
 
 - (id)initWithNavigationController:(UINavigationController *)navigationController;
+- (id)initWithView:(UIView *)view;
 - (void)insertButton:(NSString *)title;
 - (void)loadMenu;
 - (void)animateDropDown;

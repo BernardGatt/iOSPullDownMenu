@@ -3,13 +3,19 @@ iOSPullDownMenu
 
 A pulldown menu for all iOS devices.
 
-It plugs onto the navigation controller and can be configured/styled in numerous ways.
+The pulldown menu supports both navigation controllers and views, users can either pull it down or by tapping a button.
 
 <p align="center" >
-  <img src="http://www.bernardgatt.com/github/iospulldownmenu.png" alt="iOSPullDownMenu" title="iOSPullDownMenu">
+    <img src="http://www.bernardgatt.com/github/iospulldownmenu.png" alt="iOSPullDownMenu" title="iOSPullDownMenu">
 </p>
 
-### Start by including PulldownMenu inside your main navigation controller
+<p align="center" >
+    <img src="http://www.bernardgatt.com/github/iospulldownmenu-button.png" alt="iOSPullDownMenu Button" title="iOSPullDownMenu Button">
+</p>
+
+### To connect the pulldown menu to the navigation controller
+
+.h
 
 ```objective-c
 #import "PulldownMenu.h"
@@ -23,7 +29,7 @@ It plugs onto the navigation controller and can be configured/styled in numerous
 @end
 ```
 
-### On load initialise pulldownMenu
+.m
 
 ```objective-c
 - (void)viewDidLoad
@@ -40,6 +46,42 @@ It plugs onto the navigation controller and can be configured/styled in numerous
     pulldownMenu.delegate = self;
     
     [pulldownMenu loadMenu];
+}
+```
+
+### Or connect the pulldown menu to a view instead of the navigation controller.
+
+.h
+
+```objective-c
+#import "PulldownMenu.h"
+
+@interface MainViewController : UIViewController<PulldownMenuDelegate, UIScrollViewDelegate> {
+    PulldownMenu *pulldownMenu;
+}
+```
+
+.m
+
+```objective-c
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    pulldownMenu = [[PulldownMenu alloc] initWithView:self.view];
+    [self.view addSubview:pulldownMenu];
+
+    [pulldownMenu insertButton:@"Menu Item 1"];
+    [pulldownMenu insertButton:@"Menu Item 2"];
+    [pulldownMenu insertButton:@"Menu Item 3"];
+
+    pulldownMenu.delegate = self;
+    
+    [pulldownMenu loadMenu];
+}
+
+- (IBAction)menuTap:(id)sender {
+    [pulldownMenu animateDropDown];
 }
 ```
 
@@ -68,6 +110,30 @@ The component fires 2 events, #1 when a menu item is selected and #2 when the pu
 ### Open / Close on demand
 The pull down/up animation can be called on demand
 
+From a view inside a navigation controller:
+
 ```objective-c
     [((MasterNavigationController *)self.navigationController).pulldownMenu animateDropDown];
+```
+
+From a view
+
+```objective-c
+    [pulldownMenu animateDropDown];
+```
+
+### Styles
+Apart from having both table view and handle exposed, a number of styling properties are available out of the box.
+
+```objective-c
+    cellHeight = 60;
+    handleHeight = 15;
+    animationDuration = 0.3f;
+    topMarginPortrait = 0;
+    topMarginLandscape = 0;
+    cellColor = [UIColor grayColor];
+    cellSelectedColor = [UIColor blackColor];
+    cellFont = [UIFont fontWithName:@"GillSans-Bold" size:19.0f];
+    cellTextColor = [UIColor whiteColor];
+    cellSelectionStyle = UITableViewCellSelectionStyleDefault;
 ```

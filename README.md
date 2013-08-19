@@ -7,7 +7,7 @@ The pulldown menu supports both navigation controllers and views, users can eith
 
 <p align="center" >
     <img src="http://www.bernardgatt.com/github/iospulldownmenu.png" style="margin-right:10px" alt="iOSPullDownMenu" title="iOSPullDownMenu">
-    <img src="http://www.bernardgatt.com/github/iospulldownmenu-button.png" alt="iOSPullDownMenu Button" title="iOSPullDownMenu Button">
+    <img src="http://www.bernardgatt.com/github/iospulldownmenu-blue.png" alt="iOSPullDownMenu Button" title="iOSPullDownMenu Button">
 </p>
 
 ### To connect the pulldown menu to the navigation controller

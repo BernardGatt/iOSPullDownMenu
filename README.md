@@ -3,11 +3,15 @@ iOSPullDownMenu
 
 A pulldown menu for all iOS devices.
 
-The pulldown menu supports both navigation controllers and views, users can either pull it down or by tapping a button.
+The pulldown menu supports both navigation controllers and views, users can either pull it down or activate by tapping a button.
 
 <p align="center" >
-    <img src="http://www.bernardgatt.com/github/iospulldownmenu.png" style="margin-right:10px" alt="iOSPullDownMenu" title="iOSPullDownMenu">
-    <img src="http://www.bernardgatt.com/github/iospulldownmenu-blue.png" alt="iOSPullDownMenu Button" title="iOSPullDownMenu Button">
+    <div style="margin-right:10px">
+        <img src="http://www.bernardgatt.com/github/iospulldownmenu.png" alt="iOSPullDownMenu" title="iOSPullDownMenu">
+    </div>
+    <div>
+        <img src="http://www.bernardgatt.com/github/iospulldownmenu-blue.png" alt="iOSPullDownMenu Button" title="iOSPullDownMenu Button">
+    </div>
 </p>
 
 ### To connect the pulldown menu to the navigation controller

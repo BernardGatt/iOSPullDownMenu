@@ -134,3 +134,6 @@ Apart from having both table view and handle exposed, a number of styling proper
     cellTextColor = [UIColor whiteColor];
     cellSelectionStyle = UITableViewCellSelectionStyleDefault;
 ```
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/BernardGatt/iospulldownmenu/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+

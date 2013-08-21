@@ -104,7 +104,7 @@
     [self addSubview:menuList];
     
     handle = [[UIView alloc] init];
-    [handle setBackgroundColor:[UIColor grayColor]];
+    [handle setBackgroundColor:[UIColor blackColor]];
     
     [self addSubview:handle];
     
